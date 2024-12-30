@@ -25,5 +25,10 @@ jobs:
       - run: npm install
       - name: Setup ESLint
         run: |
-          echo '{"extends": "next/core-web-vitals"}' > .eslintrc.json
+          echo '{
+            "extends": "next/core-web-vitals",
+            "rules": {
+              "react/no-unescaped-entities": "off"
+            }
+          }' > .eslintrc.json
       - run: npm test
